@@ -1,0 +1,1025 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>我的攝影作品集｜程建璋</title>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+
+/* ===== 基本設定 ===== */
+
+:root {
+  --bg: #ffffff;
+  --text: #222222;
+  --muted: #777777;
+  --line: #dededb;
+  --blue: #285f91;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 30px;
+}
+
+/* ===== 導覽列 ===== */
+
+.nav {
+  min-height: 70px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px 6%;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.nav-links a {
+  font-size: 14px;
+  color: #555;
+}
+
+.nav-links a:hover {
+  color: var(--blue);
+}
+
+/* ===== 首頁 ===== */
+
+.hero {
+  padding: 100px 0 85px;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-label {
+  display: inline-block;
+  padding: 8px 13px;
+  border: 1px solid #ccc;
+  color: #555;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  font-size: clamp(56px, 10vw, 130px);
+  line-height: 1.12;
+  letter-spacing: -4px;
+  font-weight: 900;
+  margin: 28px 0;
+}
+
+.hero h1 span {
+  color: var(--blue);
+}
+
+.hero-bottom {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.hero-desc {
+  max-width: 500px;
+  font-size: 17px;
+  line-height: 2;
+  color: #666;
+}
+
+.hero-link {
+  background: #222;
+  color: white;
+  padding: 17px 26px;
+  display: inline-flex;
+  align-items: center;
+  gap: 35px;
+  white-space: nowrap;
+  transition: .2s;
+}
+
+.hero-link:hover {
+  background: var(--blue);
+  color: white;
+}
+
+/* ===== 四個作業快速入口 ===== */
+
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-left: 1px solid var(--line);
+  margin: 60px 0 0;
+}
+
+.quick-link {
+  padding: 24px 20px;
+  border: 1px solid var(--line);
+  border-left: 0;
+  transition: .2s;
+}
+
+.quick-link small {
+  color: #888;
+}
+
+.quick-link strong {
+  display: block;
+  margin-top: 14px;
+  font-size: 17px;
+}
+
+.quick-link:hover {
+  background: #f3f6f9;
+}
+
+/* ===== 共用區塊 ===== */
+
+.section {
+  padding: 95px 0;
+}
+
+.section.soft {
+  background: #f7f8f8;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 25px;
+  margin-bottom: 40px;
+}
+
+.section-heading small {
+  color: var(--blue);
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+.section-heading h2 {
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 900;
+  margin: 10px 0 0;
+}
+
+.section-heading .aside {
+  color: #888;
+  font-size: 13px;
+}
+
+/* ===== 攝影理念 ===== */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+}
+
+.about-quote {
+  font-size: clamp(28px, 4vw, 43px);
+  font-weight: 900;
+  line-height: 1.6;
+}
+
+.about-quote em {
+  color: var(--blue);
+  font-style: normal;
+}
+
+.about-copy {
+  color: #666;
+  line-height: 2.2;
+  font-size: 15px;
+}
+
+.about-copy p {
+  margin: 0 0 20px;
+}
+
+/* ===== 攝影作品展示 ===== */
+
+.works {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.work {
+  border: 1px solid var(--line);
+  background: white;
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.work:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.07);
+}
+
+/* ===== 作品封面 ===== */
+
+.work-cover {
+  height: 260px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background: #eeeeee;
+}
+
+.work-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .35s ease;
+}
+
+.work-cover:hover img {
+  transform: scale(1.05);
+}
+
+.work-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,.28),
+    transparent 35%,
+    transparent 65%,
+    rgba(0,0,0,.28)
+  );
+  pointer-events: none;
+}
+
+.work-cover .top {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: white;
+  text-shadow: 0 1px 5px rgba(0,0,0,.7);
+}
+
+.work-cover .arrow {
+  position: absolute;
+  bottom: 16px;
+  right: 20px;
+  z-index: 2;
+  color: white;
+  font-size: 25px;
+  text-shadow: 0 1px 5px rgba(0,0,0,.7);
+}
+
+/* ===== 作品文字 ===== */
+
+.work-body {
+  padding: 25px 30px 30px;
+}
+
+.work-title {
+  font-size: 25px;
+  font-weight: 900;
+  margin: 0 0 15px;
+}
+
+.work-body p {
+  font-size: 14px;
+  line-height: 2;
+  color: #777;
+  min-height: 110px;
+}
+
+.work-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 18px;
+  margin-top: 25px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.work-button:hover {
+  color: var(--blue);
+}
+
+/* ===== 我喜歡的音樂 ===== */
+
+.music-image {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.music-image a {
+  display: block;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.music-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform .3s ease;
+}
+
+.music-image a:hover img {
+  transform: scale(1.03);
+}
+
+/* ===== 個人資料 ===== */
+
+.author {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+}
+
+.author-title {
+  font-size: clamp(34px, 5vw, 65px);
+  font-weight: 900;
+  line-height: 1.4;
+}
+
+.author-title span {
+  color: var(--blue);
+}
+
+.info {
+  border-top: 1px solid var(--line);
+}
+
+.info-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 20px;
+  padding: 23px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.info-label {
+  color: #888;
+}
+
+.info-value {
+  font-weight: bold;
+}
+
+/* ===== 頁尾 ===== */
+
+footer {
+  background: #222;
+  color: white;
+  padding: 40px 6%;
+}
+
+.footer-inner {
+  max-width: 1140px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  align-items: center;
+}
+
+.footer-inner p {
+  color: #aaa;
+  font-size: 13px;
+}
+
+/* ===== 平板版 ===== */
+
+@media (max-width: 800px) {
+
+  .about,
+  .author {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .quick-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quick-link:nth-child(3),
+  .quick-link:nth-child(4) {
+    border-top: 0;
+  }
+
+}
+
+/* ===== 手機版 ===== */
+
+@media (max-width: 600px) {
+
+  .wrap {
+    padding: 0 18px;
+  }
+
+  .nav {
+    padding: 15px 18px;
+    flex-direction: column;
+  }
+
+  .brand {
+    font-size: 15px;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .hero {
+    padding: 65px 0;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+    letter-spacing: -2px;
+  }
+
+  .hero-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .quick-links {
+    margin-top: 40px;
+  }
+
+  .quick-link {
+    padding: 18px 12px;
+  }
+
+  .quick-link strong {
+    font-size: 14px;
+  }
+
+  .section {
+    padding: 65px 0;
+  }
+
+  .works {
+    grid-template-columns: 1fr;
+  }
+
+  .work-cover {
+    height: 220px;
+  }
+
+  .work-body p {
+    min-height: 0;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== 導覽列 ===== -->
+
+<nav class="nav">
+
+  <a class="brand" href="#home">
+    我的攝影作品集
+  </a>
+
+  <div class="nav-links">
+
+    <a href="#home">首頁</a>
+    <a href="#about">攝影理念</a>
+    <a href="#works">作品展示</a>
+    <a href="#music">喜歡的音樂</a>
+    <a href="#author">個人資料</a>
+
+  </div>
+
+</nav>
+
+<!-- ===== 首頁 ===== -->
+
+<header class="hero" id="home">
+
+  <div class="wrap">
+
+    <span class="hero-label">
+      攝影課程個人作品展示
+    </span>
+
+    <h1>
+      用光影<br>
+      <span>記錄故事。</span>
+    </h1>
+
+    <div class="hero-bottom">
+
+      <div class="hero-desc">
+        歡迎來到我的攝影作品集。<br>
+        從光線、建築、商品到傳統文化，<br>
+        用不同的視角探索攝影的可能性。
+      </div>
+
+      <a href="#works" class="hero-link">
+        瀏覽我的作品 <span>↗</span>
+      </a>
+
+    </div>
+
+    <!-- 四個作業快速入口 -->
+
+    <div class="quick-links">
+
+      <a class="quick-link" href="#work1">
+        <small>作業一</small>
+        <strong>五種基本布光 ↗</strong>
+      </a>
+
+      <a class="quick-link" href="#work2">
+        <small>作業二</small>
+        <strong>孔廟拍攝 ↗</strong>
+      </a>
+
+      <a class="quick-link" href="#work3">
+        <small>作業三</small>
+        <strong>商品攝影 ↗</strong>
+      </a>
+
+      <a class="quick-link" href="#work4">
+        <small>作業四</small>
+        <strong>劍獅尋寶圖 ↗</strong>
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- ===== 攝影理念 ===== -->
+
+<section class="section soft" id="about">
+
+  <div class="wrap">
+
+    <div class="section-heading">
+
+      <div>
+        <small>攝影理念</small>
+        <h2>關於我的攝影</h2>
+      </div>
+
+      <span class="aside">
+        觀察・構圖・記錄
+      </span>
+
+    </div>
+
+    <div class="about">
+
+      <div class="about-quote">
+        每一次快門，<br>
+        都是對世界的<br>
+        <em>重新觀察。</em>
+      </div>
+
+      <div class="about-copy">
+
+        <p>歡迎來到我的個人攝影作品集！</p>
+
+        <p>
+          攝影不只是按下快門，
+          更是一種觀察世界與記錄生活的方式。
+          透過不同的光線、角度與構圖，
+          我嘗試捕捉每個畫面中獨特的故事。
+        </p>
+
+        <p>
+          這個網站收錄了我在攝影課程中完成的四項作業，
+          包含五種基本布光、孔廟拍攝、
+          商品攝影，以及劍獅尋寶圖。
+        </p>
+
+        <p>
+          希望透過這些作品，
+          展現我在攝影學習過程中的觀察與成長。
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ===== 攝影作品展示 ===== -->
+
+<section class="section" id="works">
+
+  <div class="wrap">
+
+    <div class="section-heading">
+
+      <div>
+        <small>課程作品</small>
+        <h2>攝影作品展示</h2>
+      </div>
+
+      <span class="aside">
+        共四項攝影作業
+      </span>
+
+    </div>
+
+    <div class="works">
+
+      <!-- ===== 作業一 ===== -->
+
+      <article class="work" id="work1">
+
+        <a class="work-cover"
+           href="https://photos.app.goo.gl/zerPNosR28wJ2Ma49"
+           target="_blank"
+           rel="noopener noreferrer">
+
+          <img
+            src="images/IMG_2956.jpg"
+            alt="五種基本布光封面">
+
+          <div class="top">
+            <span>作業一</span>
+            <span>光線練習</span>
+          </div>
+
+          <span class="arrow">↗</span>
+
+        </a>
+
+        <div class="work-body">
+
+          <h3 class="work-title">
+            五種基本布光
+          </h3>
+
+          <p>
+            本次作業主要學習攝影中五種基本布光方式，
+            透過不同的光源位置與照射角度，
+            觀察光線如何影響主體的明暗、
+            立體感與整體畫面氛圍。
+          </p>
+
+          <a class="work-button"
+             href="https://photos.app.goo.gl/zerPNosR28wJ2Ma49"
+             target="_blank"
+             rel="noopener noreferrer">
+
+            查看完整攝影作品
+            <span>↗</span>
+
+          </a>
+
+        </div>
+
+      </article>
+
+      <!-- ===== 作業二 ===== -->
+
+      <article class="work" id="work2">
+
+        <a class="work-cover"
+           href="https://photos.app.goo.gl/2xNQbCC4UGGMAKtA8"
+           target="_blank"
+           rel="noopener noreferrer">
+
+          <img
+            src="images/IMG_2836.jpg"
+            alt="孔廟拍攝封面">
+
+          <div class="top">
+            <span>作業二</span>
+            <span>建築攝影</span>
+          </div>
+
+          <span class="arrow">↗</span>
+
+        </a>
+
+        <div class="work-body">
+
+          <h3 class="work-title">
+            孔廟拍攝
+          </h3>
+
+          <p>
+            透過實地走訪孔廟，
+            觀察傳統建築的特色與細節，
+            運用攝影構圖、自然光線及不同視角，
+            記錄古蹟建築的文化氛圍與歷史美感。
+          </p>
+
+          <a class="work-button"
+             href="https://photos.app.goo.gl/2xNQbCC4UGGMAKtA8"
+             target="_blank"
+             rel="noopener noreferrer">
+
+            查看完整攝影作品
+            <span>↗</span>
+
+          </a>
+
+        </div>
+
+      </article>
+
+      <!-- ===== 作業三 ===== -->
+
+      <article class="work" id="work3">
+
+        <a class="work-cover"
+           href="https://photos.app.goo.gl/q7GWzUqK8p1q6hgw6"
+           target="_blank"
+           rel="noopener noreferrer">
+
+          <img
+            src="images/IMG_2890.jpg"
+            alt="商品攝影封面">
+
+          <div class="top">
+            <span>作業三</span>
+            <span>靜物攝影</span>
+          </div>
+
+          <span class="arrow">↗</span>
+
+        </a>
+
+        <div class="work-body">
+
+          <h3 class="work-title">
+            商品攝影
+          </h3>
+
+          <p>
+            本次作業以商品為拍攝主體，
+            學習如何透過燈光配置、
+            背景選擇與畫面構圖，
+            呈現商品的外觀、質感與特色，
+            提升影像的視覺吸引力。
+          </p>
+
+          <a class="work-button"
+             href="https://photos.app.goo.gl/q7GWzUqK8p1q6hgw6"
+             target="_blank"
+             rel="noopener noreferrer">
+
+            查看完整攝影作品
+            <span>↗</span>
+
+          </a>
+
+        </div>
+
+      </article>
+
+      <!-- ===== 作業四 ===== -->
+
+      <article class="work" id="work4">
+
+        <a class="work-cover"
+           href="https://photos.app.goo.gl/PScWdE3PRCKA79ax6"
+           target="_blank"
+           rel="noopener noreferrer">
+
+          <img
+            src="images/IMG_2914.jpg"
+            alt="劍獅尋寶圖封面">
+
+          <div class="top">
+            <span>作業四</span>
+            <span>文化紀錄</span>
+          </div>
+
+          <span class="arrow">↗</span>
+
+        </a>
+
+        <div class="work-body">
+
+          <h3 class="work-title">
+            劍獅尋寶圖
+          </h3>
+
+          <p>
+            透過尋找與拍攝傳統劍獅文化，
+            探索地方特色及歷史故事，
+            並運用攝影記錄不同劍獅的造型、
+            色彩與建築環境，
+            展現傳統文化的獨特魅力。
+          </p>
+
+          <a class="work-button"
+             href="https://photos.app.goo.gl/PScWdE3PRCKA79ax6"
+             target="_blank"
+             rel="noopener noreferrer">
+
+            查看完整攝影作品
+            <span>↗</span>
+
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ===== 我喜歡的音樂 ===== -->
+
+<section class="section soft" id="music">
+
+  <div class="wrap">
+
+    <div class="section-heading">
+
+      <div>
+        <h2>我喜歡的音樂</h2>
+      </div>
+
+    </div>
+
+    <!-- 點擊 YouTube 封面開啟新歌曲 -->
+
+    <div class="music-image">
+
+      <a
+        href="https://www.youtube.com/watch?v=aNWFSpQgQlw&amp;list=RDaNWFSpQgQlw&amp;start_radio=1"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="觀看我喜歡的音樂影片">
+
+        <img
+          src="https://img.youtube.com/vi/aNWFSpQgQlw/hqdefault.jpg"
+          alt="我喜歡的音樂 YouTube 影片封面">
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ===== 個人資料：放在最後 ===== -->
+
+<section class="section" id="author">
+
+  <div class="wrap">
+
+    <div class="section-heading">
+
+      <div>
+        <small>個人資料</small>
+        <h2>關於作者</h2>
+      </div>
+
+      <span class="aside">
+        攝影課程個人作品展示
+      </span>
+
+    </div>
+
+    <div class="author">
+
+      <div class="author-title">
+        用鏡頭<br>
+        記錄生活，<br>
+        <span>留下故事。</span>
+      </div>
+
+      <div class="info">
+
+        <div class="info-row">
+          <span class="info-label">班級</span>
+          <span class="info-value">四技多樂三甲</span>
+        </div>
+
+        <div class="info-row">
+          <span class="info-label">學號</span>
+          <span class="info-value">4B3K0127</span>
+        </div>
+
+        <div class="info-row">
+          <span class="info-label">姓名</span>
+          <span class="info-value">程建璋</span>
+        </div>
+
+        <div class="info-row">
+          <span class="info-label">作品類型</span>
+          <span class="info-value">攝影課程個人作品集</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ===== 頁尾 ===== -->
+
+<footer>
+
+  <div class="footer-inner">
+
+    <strong>我的攝影作品集</strong>
+
+    <p>
+      用光影記錄每一個值得珍藏的瞬間
+    </p>
+
+    <p>© 2026 程建璋</p>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
