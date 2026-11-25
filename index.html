@@ -11,9 +11,6 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <style>
-
-/* ===== 基本設定 ===== */
-
 :root {
   --bg: #ffffff;
   --text: #222222;
@@ -143,11 +140,11 @@ a {
   color: white;
 }
 
-/* ===== 四個作業快速入口 ===== */
+/* ===== 五個作業快速入口 ===== */
 
 .quick-links {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   border-left: 1px solid var(--line);
   margin: 60px 0 0;
 }
@@ -439,7 +436,6 @@ footer {
 /* ===== 平板版 ===== */
 
 @media (max-width: 800px) {
-
   .about,
   .author {
     grid-template-columns: 1fr;
@@ -451,16 +447,15 @@ footer {
   }
 
   .quick-link:nth-child(3),
-  .quick-link:nth-child(4) {
+  .quick-link:nth-child(4),
+  .quick-link:nth-child(5) {
     border-top: 0;
   }
-
 }
 
 /* ===== 手機版 ===== */
 
 @media (max-width: 600px) {
-
   .wrap {
     padding: 0 18px;
   }
@@ -529,7 +524,6 @@ footer {
     flex-direction: column;
     text-align: center;
   }
-
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -543,7 +537,6 @@ footer {
     transition: none !important;
   }
 }
-
 </style>
 </head>
 
@@ -552,27 +545,22 @@ footer {
 <!-- ===== 導覽列 ===== -->
 
 <nav class="nav">
-
   <a class="brand" href="#home">
     我的攝影作品集
   </a>
 
   <div class="nav-links">
-
     <a href="#home">首頁</a>
     <a href="#about">攝影理念</a>
     <a href="#works">作品展示</a>
     <a href="#music">喜歡的音樂</a>
     <a href="#author">個人資料</a>
-
   </div>
-
 </nav>
 
 <!-- ===== 首頁 ===== -->
 
 <header class="hero" id="home">
-
   <div class="wrap">
 
     <span class="hero-label">
@@ -585,7 +573,6 @@ footer {
     </h1>
 
     <div class="hero-bottom">
-
       <div class="hero-desc">
         歡迎來到我的攝影作品集。<br>
         從光線、建築、商品到傳統文化，<br>
@@ -595,10 +582,9 @@ footer {
       <a href="#works" class="hero-link">
         瀏覽我的作品 <span>↗</span>
       </a>
-
     </div>
 
-    <!-- 四個作業快速入口 -->
+    <!-- 五個作業快速入口 -->
 
     <div class="quick-links">
 
@@ -622,20 +608,21 @@ footer {
         <strong>劍獅尋寶圖 ↗</strong>
       </a>
 
+      <a class="quick-link" href="#work5">
+        <small>作業五</small>
+        <strong>臺南總圖 ↗</strong>
+      </a>
+
     </div>
-
   </div>
-
 </header>
 
 <!-- ===== 攝影理念 ===== -->
 
 <section class="section soft" id="about">
-
   <div class="wrap">
 
     <div class="section-heading">
-
       <div>
         <small>攝影理念</small>
         <h2>關於我的攝影</h2>
@@ -644,7 +631,6 @@ footer {
       <span class="aside">
         觀察・構圖・記錄
       </span>
-
     </div>
 
     <div class="about">
@@ -667,9 +653,9 @@ footer {
         </p>
 
         <p>
-          這個網站收錄了我在攝影課程中完成的四項作業，
+          這個網站收錄了我在攝影課程中完成的五項作業，
           包含五種基本布光、孔廟拍攝、
-          商品攝影，以及劍獅尋寶圖。
+          商品攝影、劍獅尋寶圖，以及臺南總圖建築攝影。
         </p>
 
         <p>
@@ -678,30 +664,24 @@ footer {
         </p>
 
       </div>
-
     </div>
-
   </div>
-
 </section>
 
 <!-- ===== 攝影作品展示 ===== -->
 
 <section class="section" id="works">
-
   <div class="wrap">
 
     <div class="section-heading">
-
       <div>
         <small>課程作品</small>
         <h2>攝影作品展示</h2>
       </div>
 
       <span class="aside">
-        共四項攝影作業
+        共五項攝影作業
       </span>
-
     </div>
 
     <div class="works">
@@ -725,7 +705,6 @@ footer {
           </div>
 
           <span class="arrow">↗</span>
-
         </a>
 
         <div class="work-body">
@@ -745,14 +724,11 @@ footer {
              href="https://photos.app.goo.gl/zerPNosR28wJ2Ma49"
              target="_blank"
              rel="noopener noreferrer">
-
             查看完整攝影作品
             <span>↗</span>
-
           </a>
 
         </div>
-
       </article>
 
       <!-- ===== 作業二 ===== -->
@@ -774,7 +750,6 @@ footer {
           </div>
 
           <span class="arrow">↗</span>
-
         </a>
 
         <div class="work-body">
@@ -794,14 +769,11 @@ footer {
              href="https://photos.app.goo.gl/2xNQbCC4UGGMAKtA8"
              target="_blank"
              rel="noopener noreferrer">
-
             查看完整攝影作品
             <span>↗</span>
-
           </a>
 
         </div>
-
       </article>
 
       <!-- ===== 作業三 ===== -->
@@ -823,7 +795,6 @@ footer {
           </div>
 
           <span class="arrow">↗</span>
-
         </a>
 
         <div class="work-body">
@@ -844,14 +815,11 @@ footer {
              href="https://photos.app.goo.gl/q7GWzUqK8p1q6hgw6"
              target="_blank"
              rel="noopener noreferrer">
-
             查看完整攝影作品
             <span>↗</span>
-
           </a>
 
         </div>
-
       </article>
 
       <!-- ===== 作業四 ===== -->
@@ -873,7 +841,6 @@ footer {
           </div>
 
           <span class="arrow">↗</span>
-
         </a>
 
         <div class="work-body">
@@ -894,37 +861,72 @@ footer {
              href="https://photos.app.goo.gl/PScWdE3PRCKA79ax6"
              target="_blank"
              rel="noopener noreferrer">
-
             查看完整攝影作品
             <span>↗</span>
-
           </a>
 
         </div>
+      </article>
 
+      <!-- ===== 作業五：臺南總圖 ===== -->
+
+      <article class="work" id="work5">
+
+        <a class="work-cover"
+           href="https://photos.app.goo.gl/RTzNnyKdkFbuAUqg6"
+           target="_blank"
+           rel="noopener noreferrer">
+
+          <img
+            src="IMG_E2975.JPG"
+            alt="臺南總圖封面">
+
+          <div class="top">
+            <span>作業五</span>
+            <span>建築攝影</span>
+          </div>
+
+          <span class="arrow">↗</span>
+        </a>
+
+        <div class="work-body">
+
+          <h3 class="work-title">
+            臺南總圖
+          </h3>
+
+          <p>
+            以臺南市立圖書館新總館為拍攝主題，
+            透過建築外觀、線條與空間構圖，
+            觀察現代建築的設計特色，
+            並運用不同角度記錄建築與周遭環境的關係。
+          </p>
+
+          <a class="work-button"
+             href="https://photos.app.goo.gl/RTzNnyKdkFbuAUqg6"
+             target="_blank"
+             rel="noopener noreferrer">
+            查看完整攝影作品
+            <span>↗</span>
+          </a>
+
+        </div>
       </article>
 
     </div>
-
   </div>
-
 </section>
 
 <!-- ===== 我喜歡的音樂 ===== -->
 
 <section class="section soft" id="music">
-
   <div class="wrap">
 
     <div class="section-heading">
-
       <div>
         <h2>我喜歡的音樂</h2>
       </div>
-
     </div>
-
-    <!-- 點擊 YouTube 封面開啟新歌曲 -->
 
     <div class="music-image">
 
@@ -939,21 +941,16 @@ footer {
           alt="我喜歡的音樂 YouTube 影片封面">
 
       </a>
-
     </div>
-
   </div>
-
 </section>
 
-<!-- ===== 個人資料：放在最後 ===== -->
+<!-- ===== 個人資料 ===== -->
 
 <section class="section" id="author">
-
   <div class="wrap">
 
     <div class="section-heading">
-
       <div>
         <small>個人資料</small>
         <h2>關於作者</h2>
@@ -962,7 +959,6 @@ footer {
       <span class="aside">
         攝影課程個人作品展示
       </span>
-
     </div>
 
     <div class="author">
@@ -996,17 +992,13 @@ footer {
         </div>
 
       </div>
-
     </div>
-
   </div>
-
 </section>
 
 <!-- ===== 頁尾 ===== -->
 
 <footer>
-
   <div class="footer-inner">
 
     <strong>我的攝影作品集</strong>
@@ -1018,7 +1010,6 @@ footer {
     <p>© 2026 程建璋</p>
 
   </div>
-
 </footer>
 
 </body>
